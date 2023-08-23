@@ -1,0 +1,34 @@
+body {
+  font-family: "Roboto Flex", sans-serif;
+}
+.card-body {
+  color: rgb(91, 98, 117);
+}
+.custom-hr {
+  color: rgb(14, 109, 253);
+}
+.week-day-emoji {
+  font-size: 50px;
+}
+.week-temp {
+  line-height: 40px;
+  font-size: 25px;
+}
+#city {
+  font-size: 55px;
+}
+#date-and-time,
+#current-weather-description {
+  font-size: 20px;
+}
+#current-weather-description {
+  text-transform: capitalize;
+  display: inline-block;
+}
+#degree {
+  font-size: 70px;
+  color: black;
+}
+ul {
+  list-style-type: none;
+}
