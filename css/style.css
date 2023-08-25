@@ -7,12 +7,8 @@ body {
 .custom-hr {
   color: rgb(14, 109, 253);
 }
-.week-day-emoji {
+.weather-forecast-emoji {
   font-size: 50px;
-}
-.week-temp {
-  line-height: 40px;
-  font-size: 25px;
 }
 #city {
   font-size: 55px;
