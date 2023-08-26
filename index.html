@@ -46,26 +46,31 @@
             </div>
           </form>
           <div class="row mx-auto p-3">
-            <div class="col-md-6">
+            <div class="col-md-7">
               <h1 id="city"></h1>
               <h2>
                 <div id="date-and-time">
-                  <div><span id="month"></span> <span id="date"></span></div>
-                  <div id="day-time"></div>
-                  <span id="day"></span>
-                  <span id="hours"></span><span id="minutes"></span>
-                </div>
-                <div id="current-temperature">
-                  <span id="degree"></span>
+                  <div>
+                    <span id="month"></span> <span id="date"></span>,
+                    <span id="day-time"></span>
+                    <span id="day"></span>
+                    <span id="hours"></span><span id="minutes"></span>
+                  </div>
                 </div>
               </h2>
+              <div class="mt-auto">
+                <span>Humidity: <span id="humidity"></span>%</span>,
+                <span>Wind: <span id="wind"></span> km/hour</span>
+              </div>
             </div>
-            <div class="col-md-6 d-flex flex-column justify-content-between">
-              <ul class="mt-auto">
-                <li id="current-weather-description"></li>
-                <li>Humidity: <span id="humidity"></span>%</li>
-                <li>Wind: <span id="wind"></span> km/hour</li>
-              </ul>
+            <div class="col-md-5">
+              <div id="current-temperature">
+                <span class="weather-current-day-emoji">
+                  <i class="wi wi-day-cloudy-high"></i
+                ></span>
+                <span id="degree"></span>
+              </div>
+              <div id="current-weather-description"></div>
             </div>
           </div>
           <hr class="my-2 custom-hr" />

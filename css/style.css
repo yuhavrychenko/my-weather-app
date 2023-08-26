@@ -4,6 +4,9 @@ body {
 .card-body {
   color: rgb(91, 98, 117);
 }
+.weather-current-day-emoji {
+  font-size: 50px;
+}
 .custom-hr {
   color: rgb(14, 109, 253);
 }
@@ -19,7 +22,7 @@ body {
 }
 #current-weather-description {
   text-transform: capitalize;
-  display: inline-block;
+  text-align: center;
 }
 #degree {
   font-size: 70px;
