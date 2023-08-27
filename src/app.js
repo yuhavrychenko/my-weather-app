@@ -46,15 +46,19 @@ function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.city;
   let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector("#degree");
-  temperatureElement.innerHTML = `${temperature}°C`;
+  temperatureElement.innerHTML = `${temperature}`;
   let description = document.querySelector("#current-weather-description");
   description.innerHTML = response.data.condition.description;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = Math.round(response.data.temperature.humidity);
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#weather-current-day-emoji").innerHTML =
-    response.data.icon;
+  let icon = response.data.condition.icon;
+  let currentDayIcon = document.querySelector("#weather-current-day-icon");
+  currentDayIcon.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
+  );
 }
 // Function to fetch weather data for a city on load
 function search(city) {

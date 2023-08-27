@@ -65,9 +65,13 @@
             </div>
             <div class="col-md-5 mx-auto">
               <div id="current-temperature">
-                <div class="weather-current-day-emoji">
-                  <span id="degree"></span>
-                </div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+                  alt=""
+                  id="weather-current-day-icon"
+                />
+                <strong id="degree"></strong>
+                <span class="units"> °C | <a href="#">°F</a> </span>
               </div>
               <div id="current-weather-description"></div>
             </div>
@@ -77,9 +81,7 @@
             <div class="row">
               <div class="col-md-2 text-center">
                 <h2 class="weather-forecast-day">Sat</h2>
-                <div class="weather-forecast-emoji">
-                  <i class="wi wi-day-cloudy-high"></i>
-                </div>
+                <img src="" alt="" id="weather-forecast-icon" />
                 <div class="weather-forecast-temperatures">
                   <span class="weather-forecast-temperature-max">20°</span
                   ><span class="weather-forecast-temperature-min">17°</span>
