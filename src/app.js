@@ -43,21 +43,22 @@ dayTime.innerHTML = `${day} ${formattedHour}:${formattedMinutes}`;
 
 // Function to display weather information
 function showTemperature(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
+  document.querySelector("#city").innerHTML = response.data.city;
+  let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector("#degree");
   temperatureElement.innerHTML = `${temperature}°C`;
   let description = document.querySelector("#current-weather-description");
-  description.innerHTML = response.data.weather[0].description;
+  description.innerHTML = response.data.condition.description;
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = Math.round(response.data.main.humidity);
+  humidity.innerHTML = Math.round(response.data.temperature.humidity);
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector("#weather-current-day-emoji").innerHTML =
+    response.data.icon;
 }
 // Function to fetch weather data for a city on load
 function search(city) {
-  let apiKey = "ae9e8cb2baee2735d5eaa4401665af2d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=o2bde3ft15fc0e6fbb7362fdb8a79c4f&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
 // Event listener for search form submission
@@ -79,8 +80,9 @@ function getCurrentWeatherForCurrentLocation(event) {
   function handlePosition(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
-    let apiKey = "2718952144ed077c12e7c160fb6fc351";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    let apiKey = "o2bde3ft15fc0e6fbb7362fdb8a79c4f";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+
     // Fetch weather data and call the display function to show the weather parameters
     axios.get(apiUrl).then(showTemperature);
   }

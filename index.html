@@ -15,12 +15,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/weather-icons.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="card border-primary mx-auto w-50 p-2 mt-4">
+      <div class="card card-custom mx-auto mt-4 p-2">
         <div class="card-body">
           <form class="row p-3" id="search-form">
             <div class="col-8">
@@ -63,12 +63,11 @@
                 <span>Wind: <span id="wind"></span> km/hour</span>
               </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 mx-auto">
               <div id="current-temperature">
-                <span class="weather-current-day-emoji">
-                  <i class="wi wi-day-cloudy-high"></i
-                ></span>
-                <span id="degree"></span>
+                <div class="weather-current-day-emoji">
+                  <span id="degree"></span>
+                </div>
               </div>
               <div id="current-weather-description"></div>
             </div>
@@ -90,16 +89,18 @@
           </div>
         </div>
       </div>
+      <footer>
+        <a
+          href="https://github.com/yuhavrychenko/my-weather-app"
+          target="_blank"
+          >Open-source code</a
+        >
+        hosted on
+        <a href="https://scintillating-dusk-05d2ac.netlify.app/" arget="_blank"
+          >Netlify</a
+        >, by Yuliia Havrychenko
+      </footer>
     </div>
-    <footer>
-      <a href="https://github.com/yuhavrychenko/my-weather-app" target="_blank"
-        >Open-source code</a
-      >
-      hosted on
-      <a href="https://scintillating-dusk-05d2ac.netlify.app/" arget="_blank"
-        >Netlify</a
-      >, by Yuliia Havrychenko
-    </footer>
     <script src="src/app.js"></script>
   </body>
 </html>

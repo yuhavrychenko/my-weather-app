@@ -1,12 +1,21 @@
 body {
   font-family: "Roboto Flex", sans-serif;
 }
+footer {
+  text-align: center;
+}
+.card-custom {
+  max-width: 700px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
 .card-body {
   color: rgb(91, 98, 117);
 }
 .weather-current-day-emoji {
   font-size: 50px;
 }
+
 .custom-hr {
   color: rgb(14, 109, 253);
 }
@@ -15,7 +24,9 @@ body {
 }
 #city {
   font-size: 55px;
+  margin-bottom: 0;
 }
+
 #date-and-time,
 #current-weather-description {
   font-size: 20px;
@@ -23,14 +34,9 @@ body {
 #current-weather-description {
   text-transform: capitalize;
   text-align: center;
+  margin-top: -10px;
 }
 #degree {
   font-size: 70px;
   color: black;
-}
-ul {
-  list-style-type: none;
-}
-footer {
-  text-align: center;
 }
