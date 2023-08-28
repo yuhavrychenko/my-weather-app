@@ -12,14 +12,13 @@ footer {
 .card-body {
   color: rgb(91, 98, 117);
 }
-.weather-current-day-emoji {
-  font-size: 50px;
+.weather-current-day-icon {
 }
 
 .custom-hr {
   color: rgb(14, 109, 253);
 }
-.weather-forecast-emoji {
+.weather-forecast-icon {
   font-size: 50px;
 }
 #city {

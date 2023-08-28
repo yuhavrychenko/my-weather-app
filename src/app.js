@@ -59,6 +59,7 @@ function showTemperature(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`
   );
+  currentDayIcon.setAttribute("alt", response.data.condition.icon);
 }
 // Function to fetch weather data for a city on load
 function search(city) {
@@ -100,3 +101,21 @@ currentLocationButton.addEventListener(
 );
 // Display weather for Berlin when the page loads
 search("Berlin");
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#degree");
+  temperatureElement.innerHTML = `${temperature} * (9/5) + 32`;
+}
+
+function displayCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#degree");
+  temperatureElement.innerHTML = `${temperature}`;
+}
+
+let fahrenheitUnit = document.querySelector("#fahrenheit");
+let celsiusUnit = document.querySelector("#celsius");
+
+fahrenheitUnit.addEventListener("click", displayFahrenheit);
+celsiusUnit.addEventListener("click", displayCelsius);
