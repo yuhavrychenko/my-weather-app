@@ -99,19 +99,21 @@ currentLocationButton.addEventListener(
   "click",
   getCurrentWeatherForCurrentLocation
 );
-// Display weather for Berlin when the page loads
-search("Berlin");
 
 function displayFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#degree");
-  temperatureElement.innerHTML = `${temperature} * (9/5) + 32`;
+  let currentTemperature = parseInt(temperatureElement.textContent);
+  let fahrenheitTemperature = Math.round((currentTemperature * 9) / 5 + 32);
+  temperatureElement.textContent = `${fahrenheitTemperature}`;
 }
 
 function displayCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#degree");
-  temperatureElement.innerHTML = `${temperature}`;
+  let currentTemperature = parseInt(temperatureElement.textContent);
+  let celsiusTemperature = Math.round(((currentTemperature - 32) * 5) / 9);
+  temperatureElement.textContent = `${celsiusTemperature}`;
 }
 
 let fahrenheitUnit = document.querySelector("#fahrenheit");
@@ -119,3 +121,6 @@ let celsiusUnit = document.querySelector("#celsius");
 
 fahrenheitUnit.addEventListener("click", displayFahrenheit);
 celsiusUnit.addEventListener("click", displayCelsius);
+
+// Display weather for Berlin when the page loads
+search("Berlin");

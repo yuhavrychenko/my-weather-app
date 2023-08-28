@@ -39,3 +39,6 @@ footer {
   font-size: 70px;
   color: black;
 }
+.current-temperature-container .active {
+  color: black;
+}
