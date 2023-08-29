@@ -16,7 +16,7 @@ const months = [
 ];
 let month = months[now.getMonth()];
 let currentMonth = document.querySelector("#month");
-currentMonth.innerHTML = `${month}`;
+currentMonth.innerHTML = `Last updated: ${month}`;
 
 let date = now.getDate();
 let currentDate = document.querySelector("#date");
@@ -103,8 +103,9 @@ currentLocationButton.addEventListener(
 
 function displayFahrenheit(event) {
   event.preventDefault();
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#degree");
   let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
   temperatureElement.innerHTML = `${fahrenheitTemperature}`;
@@ -112,19 +113,19 @@ function displayFahrenheit(event) {
 
 function displayCelsius(event) {
   event.preventDefault();
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#degree");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
 
-let fahrenheitUnit = document.querySelector("#fahrenheit");
-let celsiusUnit = document.querySelector("#celsius");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+let celsiusLink = document.querySelector("#celsius-link");
 
-fahrenheitUnit.addEventListener("click", displayFahrenheit);
-celsiusUnit.addEventListener("click", displayCelsius);
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+celsiusLink.addEventListener("click", displayCelsius);
 
 // Display weather for Berlin when the page loads
 search("Berlin");

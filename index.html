@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/weather-icons.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
+    <style href="css/style.css"></style>
   </head>
   <body>
     <div class="container">
@@ -33,35 +34,41 @@
               />
             </div>
             <div class="col-md-2">
-              <button type="submit" class="btn btn-primary w-90">Search</button>
+              <button type="submit" class="btn btn-primary w-100">
+                Search
+              </button>
             </div>
             <div class="col-md-2">
               <button
                 type="click"
-                class="btn btn-success w-90"
+                class="btn btn-success w-100"
                 id="current-location"
               >
                 Current
               </button>
             </div>
           </form>
-          <div class="row mx-auto p-3">
+          <div class="row mx-auto">
             <div class="col-md-7">
               <h1 id="city"></h1>
-              <h2>
-                <div id="date-and-time">
-                  <div>
-                    <span id="month"></span> <span id="date"></span>,
-                    <span id="day-time"></span>
-                    <span id="day"></span>
-                    <span id="hours"></span><span id="minutes"></span>
-                  </div>
-                </div>
-              </h2>
-              <div class="mt-auto">
-                <span>Humidity: <span id="humidity"></span>%</span>,
-                <span>Wind: <span id="wind"></span> km/hour</span>
-              </div>
+              <ul>
+                <li id="date-and-time">
+                  <span id="month"></span> <span id="date"></span>,
+                  <span id="day-time"></span>
+                  <span id="day"></span>
+                  <span id="hours"></span><span id="minutes"></span>
+                </li>
+                <li id="weathr-parameters" class="mt-auto">
+                  <span
+                    >Humidity: <span id="humidity"></span
+                    ><span id="humidityUnits">%</span></span
+                  >,
+                  <span
+                    >Wind: <span id="wind"></span
+                    ><span id="windUnits">km/h</span></span
+                  >
+                </li>
+              </ul>
             </div>
             <div class="col-md-5 mx-auto">
               <div class="current-temperature-container">
@@ -70,11 +77,17 @@
                   alt=""
                   id="weather-current-day-icon"
                   class="float-left"
+                  style="
+                    position: relative;
+                    top: -20px;
+                    width: 120px;
+                    height: 120px;
+                  "
                 />
                 <strong id="degree"></strong>
                 <span class="units"
-                  ><a id="celsius" href="#" class="active">°C </a> |
-                  <a id="fahrenheit" href="#">°F</a>
+                  ><a id="celsius-link" href="#" class="active">°C </a> |
+                  <a id="fahrenheit-link" href="#">°F</a>
                 </span>
                 <div id="current-weather-description"></div>
               </div>

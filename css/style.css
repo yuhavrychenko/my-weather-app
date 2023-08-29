@@ -4,6 +4,16 @@ body {
 footer {
   text-align: center;
 }
+ul {
+  list-style: none;
+  margin-left: 0 auto;
+  padding-left: 0;
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-bottom: 5px;
+}
 .card-custom {
   max-width: 700px;
   border: 1px solid #dadde1;
@@ -16,28 +26,39 @@ footer {
 .custom-hr {
   color: rgb(14, 109, 253);
 }
-.weather-forecast-icon {
-  font-size: 50px;
-}
+
 #city {
   font-size: 55px;
   margin-bottom: 0;
 }
-
-#date-and-time,
-#current-weather-description {
-  font-size: 20px;
+#weathr-parameters #humidity,
+#weathr-parameters #humidityUnits,
+#weathr-parameters #wind,
+#weathr-parameters #windUnits {
+  color: rgb(153, 214, 249);
 }
+
 #current-weather-description {
+  color: rgba(39, 33, 66, 0.4);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
   text-transform: capitalize;
   text-align: center;
-  margin-top: -10px;
+  margin-top: -40px;
+  padding-left: 70px;
 }
+
 #degree {
-  font-size: 70px;
-  color: black;
+  font-size: 80px;
+  color: (90, 99, 116);
 }
-.current-temperature-container .units #fahrenheit #celsius {
+.current-temperature-container .units {
+  font-size: 16px;
+  position: relative;
+  top: -45px;
+}
+.current-temperature-container .units a {
   text-decoration: none;
 }
 .current-temperature-container .units .active {
