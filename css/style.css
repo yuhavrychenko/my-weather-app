@@ -37,8 +37,11 @@ footer {
   font-size: 70px;
   color: black;
 }
-
+.current-temperature-container .units #fahrenheit #celsius {
+  text-decoration: none;
+}
 .current-temperature-container .units .active {
   color: black;
   cursor: default;
+  text-decoration: none;
 }
