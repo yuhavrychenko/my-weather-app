@@ -44,6 +44,7 @@ dayTime.innerHTML = `${day} ${formattedHour}:${formattedMinutes}`;
 // Function to display weather information
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.city;
+  celsiusTemperature = response.data.temperature.current;
   let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector("#degree");
   temperatureElement.innerHTML = `${temperature}`;
@@ -103,21 +104,20 @@ currentLocationButton.addEventListener(
 function displayFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#degree");
-  let currentTemperature = parseInt(temperatureElement.textContent);
-  let fahrenheitTemperature = Math.round((currentTemperature * 9) / 5 + 32);
-  temperatureElement.textContent = `${fahrenheitTemperature}`;
+  let fahrenheitTemperature = Math.round((celsiusTemperature * 9) / 5 + 32);
+  temperatureElement.innerHTML = `${fahrenheitTemperature}`;
 }
 
 function displayCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#degree");
-  let currentTemperature = parseInt(temperatureElement.textContent);
-  let celsiusTemperature = Math.round(((currentTemperature - 32) * 5) / 9);
-  temperatureElement.textContent = `${celsiusTemperature}`;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let fahrenheitUnit = document.querySelector("#fahrenheit");
-let celsiusUnit = document.querySelector("#celsius");
+let celsiusTemperature = null;
+
+let fahrenheitUnit = document.querySelector("#fahrenheit-link");
+let celsiusUnit = document.querySelector("#celsius-link");
 
 fahrenheitUnit.addEventListener("click", displayFahrenheit);
 celsiusUnit.addEventListener("click", displayCelsius);
