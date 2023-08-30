@@ -66,3 +66,20 @@ ul {
   cursor: default;
   text-decoration: none;
 }
+#search-button,
+#current-location {
+  background-color: transparent;
+}
+#search-button {
+  border-color: rgb(240, 233, 234);
+}
+
+#current-location {
+  border-color: transparent;
+}
+.location-icon {
+  color: rgb(153, 214, 249);
+}
+.search-icon {
+  color: rgb(133, 139, 152);
+}

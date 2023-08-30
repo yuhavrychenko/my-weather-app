@@ -16,36 +16,46 @@
     />
     <link rel="stylesheet" href="css/weather-icons.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/cb04d0eae4.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="css/style.css" />
-    <style href="css/style.css"></style>
   </head>
   <body>
     <div class="container">
       <div class="card card-custom mx-auto mt-4 p-2">
         <div class="card-body">
           <form class="row p-3" id="search-form">
-            <div class="col-8">
-              <input
-                type="text"
-                class="form-control w-100"
-                placeholder="Enter a city name..."
-                id="search-input"
-                autocomplete="off"
-              />
-            </div>
-            <div class="col-md-2">
-              <button type="submit" class="btn btn-primary w-100">
-                Search
-              </button>
-            </div>
-            <div class="col-md-2">
-              <button
-                type="button"
-                class="btn btn-success w-100"
-                id="current-location"
-              >
-                Current
-              </button>
+            <div class="col-12">
+              <div class="searchBar d-flex">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter a city name..."
+                    id="search-input"
+                    autocomplete="off"
+                  />
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="search-button"
+                  >
+                    <i
+                      class="fa-solid fa-magnifying-glass search-icon"
+                      style="color: #858b98"
+                    ></i>
+                  </button>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-success me-3"
+                  id="current-location"
+                >
+                  <i class="fa-solid fa-location-dot fa-lg location-icon"></i>
+                </button>
+              </div>
             </div>
           </form>
           <div class="row mx-auto">
@@ -93,6 +103,7 @@
               </div>
             </div>
           </div>
+
           <hr class="my-2 custom-hr" />
           <div class="weather-forecast"></div>
           <div class="row" id="forecast-row"></div>
