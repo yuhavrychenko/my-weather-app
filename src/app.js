@@ -127,5 +127,24 @@ let celsiusLink = document.querySelector("#celsius-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
 celsiusLink.addEventListener("click", displayCelsius);
 
+// Weather Forecast
+function displayWeatherForecast(response) {
+  let forecastData = response.data.daily;
+  for (let i = i + 1; i < forecastData.length; i++) {
+    let maximumTemperature = Math.round(forecastData[i].temperature.maximum);
+    console.log(maximumTemperature);
+    let maximumTemperatureElement = document.querySelector(
+      `#weather-forecast-temperature-max-${i}`
+    );
+    maximumTemperatureElement.innerHTML = `${maximumTemperature}`;
+  }
+}
+
+function handleForecast(city) {
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?city=${city}&key=o2bde3ft15fc0e6fbb7362fdb8a79c4f&units=metric`;
+  axios.get(apiUrl).then(displayWeatherForecast);
+}
+
 // Display weather for Berlin when the page loads
 search("Berlin");
+handleForecast("Berlin");
