@@ -83,3 +83,21 @@ ul {
 .search-icon {
   color: rgb(133, 139, 152);
 }
+input.no-outline:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none;
+}
+.input-group:focus-within {
+  border: 1px solid rgb(58, 135, 253);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+.input-group .form-control {
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+}
+.input-group .btn {
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+}
