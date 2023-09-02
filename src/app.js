@@ -105,7 +105,6 @@ fahrenheitLink.addEventListener("click", displayFahrenheit);
 celsiusLink.addEventListener("click", displayCelsius);
 
 // Function to display weather forecast
-// Function to display weather forecast
 function displayWeatherForecast(response) {
   let forecastData = response.data.daily;
   let forecastRow = document.querySelector("#forecast-row");
@@ -135,7 +134,7 @@ function displayWeatherForecast(response) {
 
     let forecastTemperaturesElement = document.createElement("div");
     forecastTemperaturesElement.classList.add("weather-forecast-temperatures");
-    forecastTemperaturesElement.innerHTML = `${forecastMaxTemp}° / ${forecastMinTemp}°`;
+    forecastTemperaturesElement.innerHTML = `${forecastMaxTemp}°  ${forecastMinTemp}°`;
 
     forecastItem.appendChild(forecastDayElement);
     forecastItem.appendChild(forecastIconElement);

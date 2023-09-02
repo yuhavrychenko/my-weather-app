@@ -16,8 +16,10 @@ ul {
 }
 .card-custom {
   max-width: 700px;
-  border: 1px solid #dadde1;
-  border-radius: 5px;
+  border: 1px solid rgb(237, 247, 250);
+  border-radius: 10px;
+  background-color: rgb(237, 247, 250);
+  box-shadow: 0 30px 50px rgba (65, 50, 100, 0.08);
 }
 .card-body {
   color: rgb(91, 98, 117);
@@ -35,22 +37,22 @@ ul {
 #weathr-parameters #humidityUnits,
 #weathr-parameters #wind,
 #weathr-parameters #windUnits {
-  color: rgb(153, 214, 249);
+  color: rgb(112, 160, 224);
 }
 
 #current-weather-description {
   color: rgba(39, 33, 66, 0.4);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 20px;
   text-transform: capitalize;
   text-align: center;
   margin-top: -40px;
-  padding-left: 70px;
+  padding-left: 27px;
 }
 
 #degree {
-  font-size: 80px;
+  font-size: 90px;
   color: (90, 99, 116);
 }
 .current-temperature-container .units {
@@ -66,20 +68,11 @@ ul {
   cursor: default;
   text-decoration: none;
 }
-#search-button,
-#current-location {
-  background-color: transparent;
-}
 #search-button {
+  background-color: rgb(255, 255, 255);
   border-color: rgb(240, 233, 234);
 }
 
-#current-location {
-  border-color: transparent;
-}
-.location-icon {
-  color: rgb(153, 214, 249);
-}
 .search-icon {
   color: rgb(133, 139, 152);
 }
