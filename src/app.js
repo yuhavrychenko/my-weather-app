@@ -71,6 +71,7 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
+  handleForecast(city);
   search(city);
 }
 // Attach event listener to the search form
@@ -127,24 +128,52 @@ let celsiusLink = document.querySelector("#celsius-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
 celsiusLink.addEventListener("click", displayCelsius);
 
-// Weather Forecast
+// Function to display weather forecast
+// Function to display weather forecast
 function displayWeatherForecast(response) {
   let forecastData = response.data.daily;
-  for (let i = i + 1; i < forecastData.length; i++) {
-    let maximumTemperature = Math.round(forecastData[i].temperature.maximum);
-    console.log(maximumTemperature);
-    let maximumTemperatureElement = document.querySelector(
-      `#weather-forecast-temperature-max-${i}`
-    );
-    maximumTemperatureElement.innerHTML = `${maximumTemperature}`;
+  let forecastRow = document.querySelector("#forecast-row");
+
+  // Clear existing forecast data
+  forecastRow.innerHTML = "";
+
+  for (let i = 1; i < forecastData.length; i++) {
+    let forecast = forecastData[i];
+    let forecastDay = new Date(forecast.time * 1000);
+    let forecastIcon = forecast.condition.icon_url;
+    let forecastMaxTemp = Math.round(forecast.temperature.maximum);
+    let forecastMinTemp = Math.round(forecast.temperature.minimum);
+
+    let forecastItem = document.createElement("div");
+    forecastItem.classList.add("col-md-2", "text-center");
+
+    let forecastDayElement = document.createElement("h2");
+    forecastDayElement.classList.add("weather-forecast-day");
+    forecastDayElement.textContent = forecastDay.toLocaleDateString("en-US", {
+      weekday: "short",
+    });
+
+    let forecastIconElement = document.createElement("img");
+    forecastIconElement.src = forecastIcon;
+    forecastIconElement.alt = forecast.condition.description;
+
+    let forecastTemperaturesElement = document.createElement("div");
+    forecastTemperaturesElement.classList.add("weather-forecast-temperatures");
+    forecastTemperaturesElement.innerHTML = `${forecastMaxTemp}° / ${forecastMinTemp}°`;
+
+    forecastItem.appendChild(forecastDayElement);
+    forecastItem.appendChild(forecastIconElement);
+    forecastItem.appendChild(forecastTemperaturesElement);
+
+    forecastRow.appendChild(forecastItem);
   }
 }
 
 function handleForecast(city) {
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?city=${city}&key=o2bde3ft15fc0e6fbb7362fdb8a79c4f&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=o2bde3ft15fc0e6fbb7362fdb8a79c4f&units=metric`;
   axios.get(apiUrl).then(displayWeatherForecast);
 }
 
 // Display weather for Berlin when the page loads
-search("Berlin");
-handleForecast("Berlin");
+search("Delhi");
+handleForecast("Delhi");
