@@ -78,30 +78,6 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
-// Get the current location button element
-let currentLocationButton = document.querySelector("#current-location");
-// Function to get and display current weather for user's current location
-function getCurrentWeatherForCurrentLocation(event) {
-  event.preventDefault();
-  // Function to handle current position
-  function handlePosition(position) {
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
-    let apiKey = "o2bde3ft15fc0e6fbb7362fdb8a79c4f";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
-
-    // Fetch weather data and call the display function to show the weather parameters
-    axios.get(apiUrl).then(showTemperature);
-  }
-  // Get the current location button element
-  navigator.geolocation.getCurrentPosition(handlePosition);
-}
-// Attach event listener to the button
-currentLocationButton.addEventListener(
-  "click",
-  getCurrentWeatherForCurrentLocation
-);
-
 function displayFahrenheit(event) {
   event.preventDefault();
 
@@ -175,5 +151,5 @@ function handleForecast(city) {
 }
 
 // Display weather for Berlin when the page loads
-search("Delhi");
-handleForecast("Delhi");
+search("Berlin");
+handleForecast("Berlin");
